@@ -82,6 +82,11 @@ except:
   F2CLIBS_PREFIX = ""
 
 try:
+  NCLLIBS_PREFIX = os.environ["NCLLIBS_PREFIX"]
+except:
+  NCLLIBS_PREFIX = ""
+
+try:
   EXTRA_OBJECTS = [os.environ["EXTRA_OBJECTS"]]
 except:
   EXTRA_OBJECTS = ""
@@ -253,6 +258,9 @@ def set_ncl_libs_and_paths():
 
   if F2CLIBS_PREFIX != "":
     PATHS.append(F2CLIBS_PREFIX)
+
+  if NCLLIBS_PREFIX != "":
+    PATHS.append(NCLLIBS_PREFIX)
 
   return LIBS,PATHS
 
